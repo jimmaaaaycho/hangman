@@ -3,7 +3,13 @@ var word = require("./word.js");
 var letter = require("./letter.js");
 var inquirer = require("inquirer");
 
-
+function randomGenerator() {
+    var words = ['white', 'blue','red','green'];
+    var rnumber = Math.floor((Math.random() * words.length)+1);
+    var rword = words[rnumber - 1];
+    var wordsplit = rword.split("");
+    return wordsplit;
+}
 
 
 function start() {
@@ -16,9 +22,9 @@ function start() {
 		]).then(function(user) {
 			var answer = user.response;
 			if (answer === "y") {
-				newWord = new word.Word(randomGenerator());
+                var test = randomGenerator();
+				newWord = new word.Word(test);
 				userGuess();
-				console.log(test);
 			} else if (answer === "n") {
 				console.log("Goodbye");
 				return;
@@ -65,4 +71,3 @@ function userGuess() {
 
 
 start();
-userGuess();

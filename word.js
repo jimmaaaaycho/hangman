@@ -52,13 +52,6 @@ Word.prototype.print = function() {
     return output;
 };
 
-function randomGenerator() {
-	var words = ['white', 'blue','red','green'];
-	var rnumber = Math.floor((Math.random() * words.length)+1);
-	var rword = words[rnumber - 1];
-	var wordsplit = rword.split("");
-	return wordsplit;
-}
  
 module.exports = {
     Word
